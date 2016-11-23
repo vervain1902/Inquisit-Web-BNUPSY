@@ -1,0 +1,42 @@
+﻿//图片呈现指导语和结束语
+<picture beginpic>
+	/items = ("begin.bmp")
+	/size = (100%,100%)
+	/position = (50%,50%)
+</picture>
+
+<picture endpic>
+	/items = ("end.bmp")
+	/size = (100%,100%)
+	/position = (50%,50%)
+</picture>
+**************************************************************************************************************
+
+<trial begintrl>
+	/stimulusframes = [1 = beginpic]
+	/recorddata = false
+	/validresponse = (anyresponse)
+</trial>
+
+<trial endtrl>
+	/stimulusframes = [1 = endpic]
+	/recorddata = false
+	/validresponse = (anyresponse)
+</trial>
+
+
+*******************************************************************************************************************
+
+<block beginblk>
+	/screencolor = (0,0,0)
+	/trials = [1 = begintrl]
+</block>
+
+<block endblk>
+	/screencolor = (0,0,0)
+	/trials = [1 = endtrl]
+</block>
+
+<expt instruct>
+	/ blocks = [1 = beginblk; 2 = endblk]
+</expt>
